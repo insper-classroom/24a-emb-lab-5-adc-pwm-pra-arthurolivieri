@@ -46,8 +46,6 @@ void x_task(void  *p) {
     adc_init();
     adc_gpio_init(PIN_X);
 
-    // 12-bit conversion, assume max value == ADC_VREF == 3.3 V
-    const float conversion_factor = 3.3f / (1 << 12);
 
     const int windowSize = 5; // Tamanho da janela para a média móvel
     float window[5] = {0,0,0,0,0}; // Inicializa a janela com 0
