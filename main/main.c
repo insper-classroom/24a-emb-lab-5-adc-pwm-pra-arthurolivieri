@@ -54,13 +54,11 @@ void x_task(void  *p) {
     float windowSum = 0; // Soma dos valores na janela
     int dataIndex = 0; // Índice atual na janela
 
-    uint16_t result;
-    float voltage;
 
     while (1) {
         adc_select_input(0); // Select ADC input 0 (GPIO26)
+        uint16_t result;
         result = adc_read();
-        voltage = result * conversion_factor;
 
         // Aplica as transformações de escala
         int centered_value = transform_to_centered_scale(result);
